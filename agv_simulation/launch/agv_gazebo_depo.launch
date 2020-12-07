@@ -1,0 +1,35 @@
+<?xml version='1.0'?>
+
+<launch>
+	
+  	<arg name="model" value="$(find agv_description)/urdf/agv.urdf.xacro"/>
+  	<arg name="x_pos" default="0.0"/>
+  	<arg name="y_pos" default="0.0"/>
+  	<arg name="z_pos" default="1.0"/>
+	
+	<!-- We resume the logic in gazebo_ros package empty_world.launch, changing only the name of the world to be launched -->
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+	   <arg name="world_name" value="$(find agv_simulation)/worlds/map_depo.world"/>
+	   <arg name="paused" default="false"/>
+	   <arg name="use_sim_time" default="true"/>
+	   <arg name="gui" default="true"/>
+	   <arg name="headless" default="false"/>
+	   <arg name="debug" default="false"/>
+
+	</include>
+
+	<!-- Spawn eva into Gazebo -->
+	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find agv_description)/urdf/agv.urdf.xacro" />
+	<node pkg="gazebo_ros" type="spawn_model" name="eva_spawn" args="-urdf -param robot_description -model AGV -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) " />
+
+
+	<!-- Robot State Publisher -->
+    	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+     	</node>
+	
+	<!-- Joint State Publisher -->
+	<node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
+
+
+
+</launch>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!-- Run Gazebo -->
+  <include file="$(find agv_simulation)/launch/agv_gazebo_depo.launch"/>
+
+  <!-- Run the map server -->
+  <arg name="map_file" default="$(find agv_navigation)/map/map.yaml"/>
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!--- Run AMCL -->
+  <include file="$(find agv_navigation)/launch/agv_amcl.launch" />
+
+  <!--- Run Move Base -->
+  <include file="$(find agv_navigation)/launch/agv_move_base.launch" />
+  
+  <!-- Run rviz -->
+  <include file="$(find agv_simulation)/launch/agv_rviz.launch" />
+
+</launch>

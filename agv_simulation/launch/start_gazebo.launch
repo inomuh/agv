@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>	
+	<arg name="world_path" default="worlds/empty.world"/>
+ <include file="$(find agv_simulation)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_path)"/>  <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!--  Laser Filter  -->
+
+   <node pkg="agv_navigation" type="laser_angular_bound_filter" name="laser_angular_bound_filter">
+
+      <param name="pi" type="double" value="3.14"/>
+      <param name="degree" type="double" value="200.25"/>      
+
+	    <remap from="/new_laser" to="/laser_scan" />
+
+   </node>
+
+</launch>

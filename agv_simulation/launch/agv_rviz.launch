@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch> 
+   <!-- values passed by command line input -->
+   <arg name="model" value="$(find agv_description)/urdf/agv.urdf.xacro"/>
+   <arg name="gui" default="false" />
+
+   <!-- set these parameters on Parameter Server -->
+   <param name="robot_description" command="$(find xacro)/xacro --inorder $(find agv_description)/urdf/agv.urdf.xacro" />
+   <param name="use_gui" value="$(arg gui)" />
+
+   <!-- Start only rviz node -->
+   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find agv_simulation)/rviz/urdf.rviz" required="true"/> 
+</launch>
