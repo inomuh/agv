@@ -28,6 +28,10 @@ Gazebo Launching:
 
     $ roslaunch agv_simulation agv_gazebo_emptyworld.launch
 
+Gazebo (Depo Map) Launching:
+
+    $ roslaunch agv_simulation agv_gazebo_depo.launch
+
 Solo-Rviz Launching:
 
     $ roslaunch agv_simulation agv_rviz_standalone.launch
