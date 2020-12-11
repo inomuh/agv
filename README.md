@@ -72,6 +72,10 @@ Requirements:
 
         $ sudo apt-get install ros-noetic-gazebo-ros-pkgs
         
+- In order for the navigation tools to work properly, "ros-navigation" files must be downloaded to your computer.
+
+        $ sudo apt-get install ros-noetic-ros-navigation
+        
 -------------------------------------------------------------------------------
 Changelog:
 ----------
