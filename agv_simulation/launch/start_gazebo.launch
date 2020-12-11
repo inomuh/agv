@@ -10,15 +10,4 @@
     <arg name="debug" value="false"/>
   </include>
 
-  <!--  Laser Filter  -->
-
-   <node pkg="agv_navigation" type="laser_angular_bound_filter" name="laser_angular_bound_filter">
-
-      <param name="pi" type="double" value="3.14"/>
-      <param name="degree" type="double" value="200.25"/>      
-
-	    <remap from="/new_laser" to="/laser_scan" />
-
-   </node>
-
 </launch>
