@@ -1,4 +1,4 @@
-image: /home/ake/catkin_ws/src/agv/agv_navigation/map/map.pgm
+image: /map/map.pgm
 resolution: 0.100000
 origin: [-10.000000, -22.800000, 0.000000]
 negate: 0
