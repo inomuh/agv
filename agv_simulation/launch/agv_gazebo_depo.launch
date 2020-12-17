@@ -20,7 +20,7 @@
 
 	<!-- Spawn eva into Gazebo -->
 	<param name="robot_description" command="$(find xacro)/xacro --inorder $(find agv_description)/urdf/agv.urdf.xacro" />
-	<node pkg="gazebo_ros" type="spawn_model" name="eva_spawn" args="-urdf -param robot_description -model AGV -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) " />
+	<node pkg="gazebo_ros" type="spawn_model" name="agv_spawn" args="-urdf -param robot_description -model AGV -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) " />
 
 
 	<!-- Robot State Publisher -->
