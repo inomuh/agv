@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <package>
   <name>agv_description</name>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <description>agv_description</description>
 
   <author>ake</author>
-  <maintainer email="todo@gmail.com">TODO</maintainer>
+  <maintainer email="kereme@acd.com">TODO</maintainer>
   <license>BSD</license>
 
 
