@@ -1,5 +1,5 @@
 # AGV-OTA (ROS Noetic)
-This repository includes the AGV-OTA ROS Noetic packages.
+This repository includes the AGV ROS Noetic packages.
 
 ![Image of AGV](https://github.com/inomuh/agv/blob/main/images/agv_gazebo.png)
 
@@ -7,7 +7,7 @@ This repository includes the AGV-OTA ROS Noetic packages.
 - agv_simulation: It is a sub-package containing the package and launch files required for the simulation of the AGV.
 - agv_slam: It is a sub-package containing the slam_gmapping launch files.
 - agv_navigation: It is a sub-package containing the navigation launch and config files.
-- (NEW - Update v1.1) agv_multirobot: It is a sub-package containing the AGV-OTA multirobot application files.
+- (NEW) agv_multirobot: It is a sub-package containing the AGV-OTA multirobot application files.
 
 
 ### For other AGV ROS Packages:
@@ -77,6 +77,11 @@ Requirements:
 
         $ sudo apt-get install ros-noetic-ros-navigation
         
+- In order for the multirobot applications to work properly, "robot_state_publisher" package must be downloaded to your workspace.
+        
+        $ cd ~/catkin_ws/src
+        $ git clone https://github.com/rhaschke/robot_state_publisher -b noetic-devel
+        
 -------------------------------------------------------------------------------
 Changelog:
 ----------
@@ -98,4 +103,12 @@ Update v1.1 - 07.01.21
 - For basic application of AGV-OTA Multirobots:
 
         $ rosrun agv_multirobot multi_move.py
+        
+Update v1.1.1 - 07.01.2021
+--------------------------
+- Bug fixes on "agv_multirobot" subpackage about "tf_prefix" and "robot_state_publisher"
+- In order for the multirobot applications to work properly, "robot_state_publisher" package must be downloaded to your workspace.
+        
+        $ cd ~/catkin_ws/src
+        $ git clone https://github.com/rhaschke/robot_state_publisher -b noetic-devel
 
