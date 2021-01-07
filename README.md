@@ -77,6 +77,11 @@ Requirements:
 
         $ sudo apt-get install ros-noetic-ros-navigation
         
+- In order for the multirobot applications to work properly, "robot_state_publisher" package must be downloaded to your workspace.
+        
+        $ cd ~/catkin_ws/src
+        $ git clone https://github.com/rhaschke/robot_state_publisher -b noetic-devel
+        
 -------------------------------------------------------------------------------
 Changelog:
 ----------
@@ -97,5 +102,13 @@ Update v1.1 - 07.01.21
 
 - For basic application of AGV-OTA Multirobots:
 
-        $ rosrun agv_multirobot multi_move.py 
+        $ rosrun agv_multirobot multi_move.py
+        
+Update v1.1.1 - 07.01.2021
+--------------------------
+- Bug fixes on "agv_multirobot" subpackage about "tf_prefix" and "robot_state_publisher"
+- In order for the multirobot applications to work properly, "robot_state_publisher" package must be downloaded to your workspace.
+        
+        $ cd ~/catkin_ws/src
+        $ git clone https://github.com/rhaschke/robot_state_publisher -b noetic-devel
 
