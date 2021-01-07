@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<launch>
+
+	<arg name="world_path" default="worlds/empty.world"/>
+	<arg name="robot1_name" default="AGV_OTA1/"/>
+	<arg name="robot2_name" default="AGV_OTA2/"/>
+	<arg name="robot3_name" default="AGV_OTA3/"/>
+	<arg name="r1_init_pose" default="-x -4 -y 0 -z 0"/>
+	<arg name="r2_init_pose" default="-x -2 -y 0 -z 0"/>
+	<arg name="r3_init_pose" default="-x 0 -y 0 -z 0"/>
+
+  	<param name="/use_sim_time" value="true" />
+
+	<!-- Gazebo Empty world -->	
+	<include file="$(find agv_simulation)/launch/start_gazebo.launch" >
+		<arg name="world_path" value="$(arg world_path)"/>
+	</include>
+	
+	<!-- Multirobot spawn -->
+	<group ns="$(arg robot1_name)">
+		<param name="robot_description" command="$(find xacro)/xacro '$(find agv_description)/urdf/agv.urdf.xacro'" />
+		
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+			<param  name="publish_frequency" type="double" value="30.0" />
+			<param name="tf_prefix" value="$(arg robot1_name)" />		
+		</node>
+		
+		<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+			 args="-urdf -model $(arg robot1_name) $(arg r1_init_pose) -param robot_description">
+		</node>
+      					
+  	</group>
+ 
+	<group ns="$(arg robot2_name)">
+		<param name="robot_description" command="$(find xacro)/xacro '$(find agv_description)/urdf/agv.urdf.xacro'" />
+		
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+			<param  name="publish_frequency" type="double" value="30.0" />
+			<param name="tf_prefix" value="$(arg robot2_name)" />		
+		</node>
+		
+		<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+			 args="-urdf -model $(arg robot2_name) $(arg r2_init_pose) -param robot_description">
+		</node>
+      					
+  	</group>
+  	
+	<group ns="$(arg robot3_name)">
+		<param name="robot_description" command="$(find xacro)/xacro '$(find agv_description)/urdf/agv.urdf.xacro'" />
+		
+		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen">
+			<param  name="publish_frequency" type="double" value="30.0" />
+			<param name="tf_prefix" value="$(arg robot3_name)" />		
+		</node>
+		
+		<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"
+			 args="-urdf -model $(arg robot3_name) $(arg r3_init_pose) -param robot_description">
+		</node>
+      					
+  	</group>
+  
+
+</launch>
