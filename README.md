@@ -1,5 +1,5 @@
 # AGV-OTA (ROS Noetic)
-This repository includes the AGV ROS Noetic packages.
+This repository includes the AGV-OTA ROS Noetic packages.
 
 ![Image of AGV](https://github.com/inomuh/agv/blob/main/images/agv_gazebo.png)
 
