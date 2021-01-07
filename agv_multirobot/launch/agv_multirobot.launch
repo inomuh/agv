@@ -2,9 +2,9 @@
 <launch>
 
 	<arg name="world_path" default="worlds/empty.world"/>
-	<arg name="robot1_name" default="AGV_OTA1"/>
-	<arg name="robot2_name" default="AGV_OTA2"/>
-	<arg name="robot3_name" default="AGV_OTA3"/>
+	<arg name="robot1_name" default="AGV_OTA1/"/>
+	<arg name="robot2_name" default="AGV_OTA2/"/>
+	<arg name="robot3_name" default="AGV_OTA3/"/>
 	<arg name="r1_init_pose" default="-x -4 -y 0 -z 0"/>
 	<arg name="r2_init_pose" default="-x -2 -y 0 -z 0"/>
 	<arg name="r3_init_pose" default="-x 0 -y 0 -z 0"/>

@@ -2,7 +2,7 @@
 <launch>
 
 	<arg name="world_path" default="worlds/empty.world"/>
-	<arg name="robot_name" default="AGV_OTA"/>
+	<arg name="robot_name" default="AGV_OTA/"/>
 	<arg name="init_pose" default="-x 0 -y 0 -z 0"/>
 
 		
@@ -11,7 +11,7 @@
 		<param name="robot_description" command="$(find xacro)/xacro '$(find agv_description)/urdf/agv.urdf.xacro'" />	
 		
 		<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher">
-			<param  name="publish_frequency" type="double" value="50.0" />
+			<param name="publish_frequency" type="double" value="50.0" />
 			<param name="tf_prefix" value="$(arg robot_name)" />	
 			<remap from="/joint_states" to="$(arg robot_name)/joint_states" />	
 		</node>
