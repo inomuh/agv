@@ -7,6 +7,7 @@ This repository includes the AGV ROS Noetic packages.
 - agv_simulation: It is a sub-package containing the package and launch files required for the simulation of the AGV.
 - agv_slam: It is a sub-package containing the slam_gmapping launch files.
 - agv_navigation: It is a sub-package containing the navigation launch and config files.
+- (NEW - Update v1.1) agv_multirobot: It is a sub-package containing the AGV-OTA multirobot application files.
 
 
 ### For other AGV ROS Packages:
@@ -82,3 +83,19 @@ Changelog:
 Update v1.0 - 07.12.20
 ----------------------
 - First version
+
+Update v1.1 - 07.01.21
+----------------------
+- Added AGV-OTA multirobot functionality with "agv_multirobot" subpackage.
+- Some bug fixes.
+
+- For Multirobot Launching:
+
+        $ roslaunch agv_multirobot agv_multirobot.launch
+        
+![Image of AGV-Multirobot](https://github.com/inomuh/agv/blob/v1.1/images/agv_multirobot.png)
+
+- For basic application of AGV-OTA Multirobots:
+
+        $ rosrun agv_multirobot multi_move.py
+
