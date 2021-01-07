@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- No namespace here as we will share this description. 
+       Access with slash at the beginning -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find agv_description)/urdf/agv.urdf.xacro" />
+
+  <!-- BEGIN ROBOT 1-->
+  <group ns="agv1">
+    <param name="tf_prefix" value="agv1_tf" />
+    <include file="$(find agv_simulation)/launch/spawn_agv.launch" >
+      <arg name="init_pose" value="-x 0 -y 1 -z 0" />
+      <arg name="robot_name"  value="AGV_OTA1" />
+    </include>
+  </group>
+
+  <!-- BEGIN ROBOT 2-->
+  <group ns="agv2">
+    <param name="tf_prefix" value="agv2_tf" />
+    <include file="$(find agv_simulation)/launch/spawn_agv.launch" >
+      <arg name="init_pose" value="-x -2 -y 1 -z 0" />
+      <arg name="robot_name"  value="AGV_OTA2" />
+    </include>
+  </group>
+  
+  <!-- BEGIN ROBOT 3
+  <group ns="agv3">
+    <param name="tf_prefix" value="agv3_tf" />
+    <include file="$(find agv_simulation)/launch/spawn_agv.launch" >
+      <arg name="init_pose" value="-x -4 -y 1 -z 0" />
+      <arg name="robot_name"  value="AGV_OTA3" />
+    </include>
+  </group>-->
+</launch>

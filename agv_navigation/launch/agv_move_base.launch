@@ -8,8 +8,8 @@
 
 	  <!--- Run Move Base -->
 	  <node pkg="move_base" type="move_base" respawn="false" name="agv1_move_base" output="screen" >
-	   <remap from="cmd_vel" to="/cmd_vel"/>
-	   <remap from="odom" to="/odom"/> 
+	   <!--<remap from="cmd_vel" to="/cmd_vel"/>
+	   <remap from="odom" to="/odom"/> -->
 	    <param name="base_global_planner" value="$(arg base_global_planner)"/>
 	    <param name="base_local_planner" value="$(arg base_local_planner)"/>
 	    <param name="move_base/global_costmap/robot_base_frame" value="/base_link"/>

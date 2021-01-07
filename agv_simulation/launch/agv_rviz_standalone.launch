@@ -2,7 +2,7 @@
 <launch> 
    <!-- values passed by command line input -->
    <arg name="model" value="$(find agv_description)/urdf/agv.urdf.xacro"/>
-   <arg name="gui" default="true" />
+   <arg name="gui" default="false" />
 
    <!-- set these parameters on Parameter Server -->
    <param name="robot_description" command="$(find xacro)/xacro --inorder $(find agv_description)/urdf/agv.urdf.xacro" />
