@@ -97,5 +97,5 @@ Update v1.1 - 07.01.21
 
 - For basic application of AGV-OTA Multirobots:
 
-        $ rosrun agv_multirobot multi_move.py
+        $ rosrun agv_multirobot multi_move.py 
 
