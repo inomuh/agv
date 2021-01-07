@@ -94,3 +94,7 @@ Update v1.1 - 07.01.21
         
 ![Image of AGV-Multirobot](https://github.com/inomuh/agv/blob/v1.1/images/agv_multirobot.png)
 
+- For basic application of AGV-OTA Multirobots:
+
+        $ rosrun agv_multirobot multi_move.py
+
