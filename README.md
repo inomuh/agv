@@ -82,3 +82,15 @@ Changelog:
 Update v1.0 - 07.12.20
 ----------------------
 - First version
+
+Update v1.1 - 07.01.21
+----------------------
+- Added AGV-OTA multirobot functionality with "agv_multirobot" subpackage.
+- Some bug fixes.
+
+- For Multirobot Launching:
+
+        $ roslaunch agv_multirobot agv_multirobot.launch
+        
+![Image of AGV-Multirobot](https://github.com/inomuh/agv/blob/v1.1/images/agv_multirobot.png)
+
