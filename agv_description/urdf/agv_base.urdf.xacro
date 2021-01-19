@@ -14,10 +14,10 @@
       </visual>    
       
       <collision>
-        <origin xyz="0 0 0.011" rpy=" 0 0 0"/>
+        <origin xyz="0 0 -0.075" rpy=" 0 0 0"/>
         <geometry>
           <!--<mesh filename="package://agv_description/meshes/OTAv07_meshes/OTA-v0.7.stl" scale="0.001 0.001 0.001"/> -->
-          <box size="1.02 0.72 0.29"/>
+          <box size="1.02 0.72 0.14"/>
         </geometry>
       </collision>    
     
