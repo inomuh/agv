@@ -57,8 +57,7 @@ Requirements:
 -------------
 - In order for the "joint_state_publisher" to work, "joint_state_publisher_gui" package must be downloaded to your computer.
 
-        $ sudo apt update
-        $ sudo apt install ros-noetic-joint-state-publisher-gui
+        $ sudo apt update && sudo apt install ros-noetic-joint-state-publisher-gui
         
 - In order for the "joint_state_controller" to work, "joint_state_controller_gui" package must be downloaded to your computer.
 
@@ -66,8 +65,7 @@ Requirements:
         
 - In order for the SLAM to work, "slam_gmapping" package must be downloaded to your workspace.
         
-        $ cd ~/catkin_ws/src
-        $ git clone https://github.com/ros-perception/slam_gmapping.git -b melodic-devel
+        $ cd ~/catkin_ws/src && git clone https://github.com/ros-perception/slam_gmapping.git -b melodic-devel
         
 - In order for the sensors to work properly, "gazebo_ros_pkgs" files must be downloaded to your computer.
 
@@ -79,8 +77,7 @@ Requirements:
         
 - In order for the multirobot applications to work properly, "robot_state_publisher" package must be downloaded to your workspace.
         
-        $ cd ~/catkin_ws/src
-        $ git clone https://github.com/rhaschke/robot_state_publisher -b noetic-devel
+        $ cd ~/catkin_ws/src && git clone https://github.com/rhaschke/robot_state_publisher -b noetic-devel
         
 -------------------------------------------------------------------------------
 Changelog:
@@ -109,6 +106,5 @@ Update v1.1.1 - 07.01.2021
 - Bug fixes on "agv_multirobot" subpackage about "tf_prefix" and "robot_state_publisher"
 - In order for the multirobot applications to work properly, "robot_state_publisher" package must be downloaded to your workspace.
         
-        $ cd ~/catkin_ws/src
-        $ git clone https://github.com/rhaschke/robot_state_publisher -b noetic-devel
+        $ cd ~/catkin_ws/src && git clone https://github.com/rhaschke/robot_state_publisher -b noetic-devel
 
